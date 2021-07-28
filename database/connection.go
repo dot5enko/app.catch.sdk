@@ -29,8 +29,7 @@ func Init(config2 Config, migrate bool, entitys []interface{}) {
 
 	var err error
 
-	dblogger := log.New(log.Writer(), "[DB]", log.Ldate|log.Ltime)
-
+	dblogger := log.New(log.Writer(), "[DB]", log.Ldate|log.Ltime|log.Lmsgprefix)
 	dblogger.Printf("initialization started")
 
 	var dbLogger logger.Interface
