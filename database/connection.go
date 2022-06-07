@@ -54,7 +54,7 @@ func Init(config2 Config, migrate bool, entitys []interface{}) {
 
 	if config2.Driver == "sqlite" {
 		dblogger.Printf("sqlite db path hardcoded to ./local.db")
-		Db, err = gorm.Open(sqlite.Open("./local.db"), dialectConfig)
+		Db, err = gorm.Open(sqlite.Open(config2.Host), dialectConfig)
 		if err != nil {
 			panic("unable to start db conn: " + err.Error())
 		}
